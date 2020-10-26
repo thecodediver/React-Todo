@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledToDo = styled.div`
+  h1 {
+    text-align: center;
+  }
   ul {
     border: 1px solid black;
     color: white;
@@ -26,6 +29,7 @@ class Todo extends React.Component {
     return (
       <StyledToDo>
         <ul>
+        <h1>To Do Items</h1>
           {this.props.toDo.map(todo => <li className={todo.completed ? 'completed' : null} onClick={e => this.props.toggleCompleted(todo.id)} key={todo.id}>{todo.task}</li>)}
         </ul>
       </StyledToDo>
